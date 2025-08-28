@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div class="cursor-pointer bg-[var(--main-color)] w-12 h-8 md:w-15 md:h-8 rounded-full flex items-center justify-start fixed top-20 right-1 z-50" (click)="toggleTheme()">
+    <div class="theme-btn w-6 h-6 rounded-full absolute left-1 transition-all duration-300 transform" 
+         [ngClass]="{'translate-x-5 md:translate-x-8': !isLightTheme, 'translate-x-0 left-1': isLightTheme, 'bg-white': true}">
+        <mat-icon class="text-sm flex items-center justify-center h-full" *ngIf="isLightTheme">sunny</mat-icon>
+        <mat-icon class="text-sm flex items-center justify-center h-full" *ngIf="!isLightTheme">bedtime</mat-icon>
+    </div>
+</div>
+<section id="home">
+    <app-home></app-home>
+</section>
+<section id="about-me">
+    <app-about-me></app-about-me>
+</section>
+<section id="skills">
+    <app-skills></app-skills>
+</section>
+<section id="portfolio">
+    <app-portfolio></app-portfolio>
+</section>
+<section id="contact">
+    <app-contact-me></app-contact-me>
+</section>
+<app-footer></app-footer>

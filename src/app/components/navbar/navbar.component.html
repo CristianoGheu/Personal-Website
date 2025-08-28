@@ -1,0 +1,45 @@
+<header class="flex justify-between items-center fixed top-0 w-full h-15 z-1000" style="background-color: var(--second-bg-color); color: var(--text-color); padding: 0 20px;">
+    <a class="cursor-pointer font-semibold text-2xl  hover:text-[var(--main-color)]" href="#home">Portfolio</a>
+    
+    <!-- Menu Desktop -->
+    <div class="hidden md:flex space-x-6 gap-4">
+        <a class="text-[var(--text-color)] text-xl hover:text-[var(--main-color)]" href="#home">Home</a>
+        <a class="text-[var(--text-color)] text-xl hover:text-[var(--main-color)]" href="#about-me">About</a>
+        <a class="text-[var(--text-color)] text-xl hover:text-[var(--main-color)]" href="#skills">Skills</a>
+        <a class="text-[var(--text-color)] text-xl hover:text-[var(--main-color)]" href="#portfolio">Portfolio</a>
+        <a class="text-[var(--text-color)] text-xl hover:text-[var(--main-color)]" href="#contact">Contact</a>
+    </div>
+
+    <!-- Menu Mobile Button -->
+    <button class="md:hidden" (click)="toggleMenu($event)">
+        <div class="w-6 h-4.5 flex flex-col justify-between">
+            <span class="w-full h-0.5 bg-[var(--text-color)] transition-all" [ngClass]="{'rotate-45 translate-y-2': isMenuOpen}"></span>
+            <span class="w-full h-0.5 bg-[var(--text-color)] transition-all" [ngClass]="{'opacity-0': isMenuOpen}"></span>
+            <span class="w-full h-0.5 bg-[var(--text-color)] transition-all" [ngClass]="{'rotate-[-45deg] -translate-y-2': isMenuOpen}"></span>
+        </div>
+    </button>
+</header>
+
+<!-- Menu Mobile Dropdown -->
+<div class="md:hidden fixed top-[64px] w-full z-1000 bg-[var(--second-bg-color)] transition-all duration-300"
+     [ngClass]="{'h-0 opacity-0': !isMenuOpen, 'h-[250px] opacity-100': isMenuOpen}">
+    <div class="h-full flex flex-col justify-center pl-8" [ngClass]="{'hidden': !isMenuOpen}">
+        <div class="flex flex-col justify-between h-60" style="margin-left: 20px;">
+            <a class="text-[var(--text-color)] text-xl" 
+               (click)="navigateToSection('#home')" 
+               href="javascript:void(0)">Home</a>
+            <a class="text-[var(--text-color)] text-xl" 
+               (click)="navigateToSection('#about-me')" 
+               href="javascript:void(0)">About</a>
+            <a class="text-[var(--text-color)] text-xl" 
+               (click)="navigateToSection('#skills')" 
+               href="javascript:void(0)">Skills</a>
+            <a class="text-[var(--text-color)] text-xl" 
+               (click)="navigateToSection('#portfolio')" 
+               href="javascript:void(0)">Portfolio</a>
+            <a class="text-[var(--text-color)] text-xl" 
+               (click)="navigateToSection('#contact')" 
+               href="javascript:void(0)">Contact</a>
+        </div>
+    </div>
+</div>

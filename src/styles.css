@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+html, body { 
+    height: 100%;
+    width: 100%;
+}
+body { 
+    margin: 0; 
+    background-color: var(--bg-color);
+}
+
+@theme {
+    --bg-color: #DCFAF9;
+    --second-bg-color: #5796FA;
+    --main-color:#57C9FA;
+    --text-color: #000000;
+    --hover-color: #5796FAdd;
+}
+
+@layer components {
+    .dark-theme {
+        --bg-color: #020133;
+        --second-bg-color: #10008A;
+        --main-color: #196DA8;
+        --text-color: #FFFFFF;
+        --hover-color: #10008Add;
+    }
+
+    .button {
+        @apply bg-[var(--main-color)] text-[var(--text-color)] w-35 h-8 md:w-40 md:h-10 flex items-center justify-center text-sm md:text-base font-bold cursor-pointer rounded-full px-4 py-2 transition delay-150 duration-300 ease-in-out hover:scale-110  hover:bg-[var(--second-bg-color)];
+    }
+
+    .profile-picture {
+        @apply rounded-full w-70 h-70 md:w-80 md:h-80 lg:w-100 lg:h-100;
+    }
+
+}

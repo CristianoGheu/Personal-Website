@@ -1,0 +1,101 @@
+.projects-container .project-card {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    display: flex;
+}
+
+.project-card img {
+    width: 430px;
+    height: 250px;
+    transition: transform 500ms ease-in-out;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-card .project-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--hover-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+    transform: translateY(100%);
+    transition: transform 500ms ease-in-out;
+}
+
+.project-card:hover .project-layer {
+    transform: translateY(0);
+}
+
+.project-layer h2 {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    max-width: 400px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.project-layer p {
+    font-size: 1rem;
+    color: var(--text-color);
+    max-width: 400px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.project-layer a {
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-top: 0.5rem;
+}
+
+.button-project {
+    background-color: var(--main-color);
+    width: 2.25rem;
+    height: 2.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 1024px) {
+    .project-card img {
+        width: 350px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .project-card img {
+        width: 350px;
+        height: 230px;
+    }
+
+    .project-layer h2 {
+        font-size: 1rem;
+    }
+
+    .project-layer p {
+        font-size: 0.9rem;
+    }
+
+    .button-project {
+        width: 2rem;
+        height: 2rem;
+    }
+}

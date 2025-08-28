@@ -1,0 +1,37 @@
+<div class="flex flex-col items-center justify-center min-h-screen p-5">
+    <h1 class="text-4xl md:text-5xl font-bold text-[var(--text-color)]">Contact Me</h1>
+    <div class="contact-form-container">
+        <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <input type="text" id="name" name="name" formControlName="name" placeholder="Full Name">
+                <div *ngIf="contactForm.get('name')?.invalid && (contactForm.get('name')?.touched || contactForm.get('name')?.dirty)" class="error-message">
+                    <small *ngIf="contactForm.get('name')?.errors?.['required']">Name is required</small>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" id="email" name="email" formControlName="email" placeholder="Email Address">
+                <div *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.touched || contactForm.get('email')?.dirty)" class="error-message">
+                    <small *ngIf="contactForm.get('email')?.errors?.['required']">Email is required</small>
+                    <small *ngIf="contactForm.get('email')?.errors?.['email']">Invalid email format</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="subject" name="subject" formControlName="subject" placeholder="Subject">
+                <div *ngIf="contactForm.get('subject')?.invalid && (contactForm.get('subject')?.touched || contactForm.get('subject')?.dirty)" class="error-message">
+                    <small *ngIf="contactForm.get('subject')?.errors?.['required']">Subject is required</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <textarea id="message" name="message" formControlName="message" placeholder="Your message" rows="4"></textarea>
+                <div *ngIf="contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || contactForm.get('message')?.dirty)" class="error-message">
+                    <small *ngIf="contactForm.get('message')?.errors?.['required']">Message is required</small>
+                </div>
+            </div>
+
+            <button type="submit" class="button" [disabled]="contactForm.invalid">Send Message</button>
+        </form>
+    </div>
+</div>
