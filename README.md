@@ -21,4 +21,4 @@ Ho utilizzato Tailwind CSS e CSS per la grafica e per rendere il sito completame
 
 🔹 Ho aggiunto la possibilità di passare dalla dark mode alla light mode, per rendere il sito più accattivante
 
-# :link: *Project link: [My portfolio](https://ila1997.github.io/personal-website/)*
+# :link: *Link Progetto: [My portfolio](https://ila1997.github.io/personal-website/)*
